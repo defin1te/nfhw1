@@ -1,32 +1,28 @@
-
-
-import "./globals.css";
-import { Montserrat } from "next/font/google";
-import { Metadata } from "next";
+import './globals.css';
+import { Montserrat } from 'next/font/google';
 import Header from '@/components/header';
-import Footer from "@/components/footer";
+import Footer from '@/components/footer';
 
 const montserrat = Montserrat({
-  subsets: ["latin", "cyrillic"],
-  display: "swap",
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: "n!2024",
-  description: "On Next Js",
+export const metadata = {
+  title: 'Blog app',
+  description: 'Blog app for NF1HW',
 };
 
-interface RootLayoutProps {
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning className={montserrat.className}>
-      <head />
-      <body>
+    <html lang="en">
+      <body className={montserrat.className}>
         <Header />
-        <main className="container mx-auto p-4">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

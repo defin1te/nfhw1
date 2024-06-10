@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Link from "next/link";
 import { data } from '@/app/data/data';
